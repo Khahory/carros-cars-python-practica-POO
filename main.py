@@ -1,16 +1,40 @@
-# This is a sample Python script.
+from pprint import pprint
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import Carro
+import CarroVolador
 
 
-# Press the green button in the gutter to run the script.
+def comparar_carros():
+    comparar_carro_nuevo = Carro.Carro(4, 4, 'rojo', 'Toyota')
+    comparar_carro_viejo = Carro.Carro(1, 1, 'rojo', 'Toyota')
+
+    # evaluda si dos carros son iguales
+    pprint(comparar_carro_nuevo.__eq__(comparar_carro_viejo))
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    carro_nuevo = Carro.Carro(4, 4, 'rojo', 'Toyota')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # nos vamos para Singapur
+    carro_nuevo.acelerar()
+    carro_nuevo.frenar()
+    carro_nuevo.girar('izquierda')
+    carro_nuevo.acelerar()
+    carro_nuevo.frenar()
+    carro_nuevo.girar('derecha')
+    carro_nuevo.acelerar()
+    carro_nuevo.frenar()
+    pprint('Llegamos a Singapur')
+
+    pprint('---------------------------------')
+
+    pprint('Ahora vamos a volar')
+    carro_volador = CarroVolador.CarroVolador('rojo', True)
+    carro_volador.vuela()
+    carro_volador.aterriza()
+    carro_volador.acelerar()
+    carro_volador.frenar()
+
+    pprint(carro_volador.__dict__)
+
+
